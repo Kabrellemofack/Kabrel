@@ -1,22 +1,36 @@
 public class StockManager {
 
-    // gere le stock
-    public void gererStock(String typeOperation, String produit, int quantite, int stock) {
-        // Ajout au stock
-        if (typeOperation.equals("ajout")) {
-            stock += quantite;
-            System.out.println("Produit : " + produit + ", Stock après ajout : " + stock);
-        // Retrait du stock
-        } else if (typeOperation.equals("retrait")) {
-            if (stock >= quantite) {
-                stock -= quantite;
-                System.out.println("Produit : " + produit + ", Stock après retrait : " + stock);
-            } else {
-                System.out.println("Stock insuffisant pour le produit : " + produit);
-            }
-        // Si l'action est inconnu
+    /**
+     * fonction pour gerer  un stock
+     */
+    public void gererStock() {
+
+        testerProduit();
+
+    }
+    /**
+     * tester un produit 
+     */
+    public testerProduit(String typeOperation, String produit, int quantite, int stock){
+            
+        if (typeOperation.equals("ajout")){
+
+        }
+        if(typeOperation.equals("retrait") && stock >= quantite ){
+            stock -= quantite;
+            System.out.println("Produit : " + produit + ", Stock après retrait : " + stock);
+
+        }
+        if (stock <= quantite){
+
+            System.out.println("Stock insuffisant pour le produit : " + produit);
+
         } else {
             System.out.println("Opération inconnue.");
+
         }
+
+           
     }
+    
 }
